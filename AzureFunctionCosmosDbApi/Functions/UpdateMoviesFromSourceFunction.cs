@@ -6,15 +6,14 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using AzureFunctionCosmosDbApi.Functions;
-using AzureFunctionsCosmosDbApi.DataAccess;
-using AzureFunctionsCosmosDbApi.Domain;
+using AzureFunctionCosmosDbApi.DataAccess;
+using AzureFunctionCosmosDbApi.Domain;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using MoviesApi.Common;
 
-namespace AzureFunctionsCosmosDbApi.Functions
+namespace AzureFunctionCosmosDbApi.Functions
 {
 
   public class FinnkinoMovieQueryFunction

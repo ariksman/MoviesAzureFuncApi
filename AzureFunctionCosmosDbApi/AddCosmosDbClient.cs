@@ -1,11 +1,11 @@
 using System;
-using AzureFunctionsCosmosDbApi.DataAccess;
+using AzureFunctionCosmosDbApi.DataAccess;
 using Microsoft.Azure.Cosmos.Fluent;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AzureFunctionsCosmosDbApi
+namespace AzureFunctionCosmosDbApi
 {
   public static class AddCosmosDbClient
   {
