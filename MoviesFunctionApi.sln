@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionTableStorageApi", "AzureFunctionTableStorageApi\AzureFunctionTableStorageApi.csproj", "{79CF9C53-1B39-400A-8F9E-3A97A225E874}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DED26D18-A632-457C-9C7B-C5511532E2BF}"
+	ProjectSection(SolutionItems) = preProject
+		appSettings.json = appSettings.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionCosmosDbApi", "AzureFunctionCosmosDbApi\AzureFunctionCosmosDbApi.csproj", "{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.Common", "MoviesApi.Common\MoviesApi.Common.csproj", "{FE3CD6CF-5033-43BE-B624-2DD11F4C3590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionCosmosDbApi.DataAccess", "AzureFunctionCosmosDbApi.DataAccess\AzureFunctionCosmosDbApi.DataAccess.csproj", "{0A07BED4-5344-4E83-83DD-39D7E514ACB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionCosmosDbApi.Domain", "AzureFunctionCosmosDbApi.Domain\AzureFunctionCosmosDbApi.Domain.csproj", "{CAF43C01-684B-4BFF-9524-11FA15F54E9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CosmosDB API", "CosmosDB API", "{2F81D81D-504B-4DEB-9CFB-AE74DA4A6475}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureTable API", "AzureTable API", "{D30F425A-CB7D-40BE-BACC-85830318F2F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureSQL API", "AzureSQL API", "{8F18070B-633E-4C1B-A471-2A7758279C62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionSqlApi", "AzureFunctionSqlApi\AzureFunctionSqlApi.csproj", "{5095004D-C722-415C-8B9D-8BEB70466CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionSqlApi.DataAccess", "AzureFunctionSqlApi.DataAccess\AzureFunctionSqlApi.DataAccess.csproj", "{A891C329-6768-469E-8C86-97D17B69EB09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79CF9C53-1B39-400A-8F9E-3A97A225E874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CF9C53-1B39-400A-8F9E-3A97A225E874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CF9C53-1B39-400A-8F9E-3A97A225E874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CF9C53-1B39-400A-8F9E-3A97A225E874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3CD6CF-5033-43BE-B624-2DD11F4C3590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3CD6CF-5033-43BE-B624-2DD11F4C3590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3CD6CF-5033-43BE-B624-2DD11F4C3590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3CD6CF-5033-43BE-B624-2DD11F4C3590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A07BED4-5344-4E83-83DD-39D7E514ACB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A07BED4-5344-4E83-83DD-39D7E514ACB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A07BED4-5344-4E83-83DD-39D7E514ACB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A07BED4-5344-4E83-83DD-39D7E514ACB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF43C01-684B-4BFF-9524-11FA15F54E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF43C01-684B-4BFF-9524-11FA15F54E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF43C01-684B-4BFF-9524-11FA15F54E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF43C01-684B-4BFF-9524-11FA15F54E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5095004D-C722-415C-8B9D-8BEB70466CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5095004D-C722-415C-8B9D-8BEB70466CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5095004D-C722-415C-8B9D-8BEB70466CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5095004D-C722-415C-8B9D-8BEB70466CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A891C329-6768-469E-8C86-97D17B69EB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A891C329-6768-469E-8C86-97D17B69EB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A891C329-6768-469E-8C86-97D17B69EB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A891C329-6768-469E-8C86-97D17B69EB09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79CF9C53-1B39-400A-8F9E-3A97A225E874} = {D30F425A-CB7D-40BE-BACC-85830318F2F4}
+		{EDD83A9E-42AB-467A-ABF1-BE5EA9EBB3A4} = {2F81D81D-504B-4DEB-9CFB-AE74DA4A6475}
+		{0A07BED4-5344-4E83-83DD-39D7E514ACB9} = {2F81D81D-504B-4DEB-9CFB-AE74DA4A6475}
+		{CAF43C01-684B-4BFF-9524-11FA15F54E9E} = {2F81D81D-504B-4DEB-9CFB-AE74DA4A6475}
+		{5095004D-C722-415C-8B9D-8BEB70466CBB} = {8F18070B-633E-4C1B-A471-2A7758279C62}
+		{A891C329-6768-469E-8C86-97D17B69EB09} = {8F18070B-633E-4C1B-A471-2A7758279C62}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4D7CDB6-FA90-4C72-92F6-35A36562757D}
+	EndGlobalSection
+EndGlobal

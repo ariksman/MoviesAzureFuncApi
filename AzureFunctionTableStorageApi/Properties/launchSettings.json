@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MoviesFunctionApi": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --build --port 7071 --cors * --pause-on-error"
+    }
+  }
+}
