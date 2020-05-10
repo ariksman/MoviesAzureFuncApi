@@ -1,9 +1,7 @@
-using System;
 using System.IO;
 using AzureFunctionSqlApi;
 using AzureFunctionSqlApi.DataAccess;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -31,49 +29,8 @@ namespace AzureFunctionSqlApi
       });
 
       var connectionString = config.GetConnectionString("AzureSqlConnectionString");
-      //builder.Services.AddDbContext<DatabaseContext>(
-      //  options => options.UseSqlServer(connectionString));
-      builder.Services.AddEfDbContextService(connectionString);
-    }
-  }
-
-  public static class AddEfDbContext
-  {
-    private static event EventHandler InitializeDatabase = delegate { };
-
-    public static IServiceCollection AddEfDbContextService(this IServiceCollection services, string connectionString)
-    {
-      if (services == null)
-      {
-        throw new ArgumentNullException(nameof(services));
-      }
-
-      DatabaseContext Factory(IServiceProvider sp)
-      {
-        //var options = sp.GetService<IOptions<AzureSqlSettings>>();
-        //var azureSqlSettings = options.Value;
-
-        if (string.IsNullOrEmpty(connectionString))
-        {
-          throw new ArgumentException("Please specify a valid connectionString in the local.settings.json file or your Azure Functions Settings.");
-        }
-        var optionsBuilder = new DbContextOptionsBuilder();
-        var databaseContext = new DatabaseContext(optionsBuilder.UseSqlServer(connectionString).Options);
-
-        async void Handler(object sender, EventArgs args)
-        {
-          InitializeDatabase -= Handler;
-          await databaseContext.Database.MigrateAsync();
-        }
-
-        InitializeDatabase += Handler;
-        InitializeDatabase(null, EventArgs.Empty); // raise event to initialize
-
-        return databaseContext;
-      }
-
-      services.AddSingleton(Factory);
-      return services;
+      builder.Services.AddDbContext(connectionString);
+      builder.Services.AddSingleton(sp => new MovieRepository(sp.GetService<DatabaseContext>()));
     }
   }
 
