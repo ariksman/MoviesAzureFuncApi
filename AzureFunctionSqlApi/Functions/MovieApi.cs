@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace AzureFunctionSqlApi.Functions
@@ -13,15 +12,15 @@ namespace AzureFunctionSqlApi.Functions
   public class MovieApi
   {
     private readonly ILogger _logger;
-    private readonly DatabaseContext _databaseContext;
+    private readonly MovieRepository _movieRepository;
 
 
     public MovieApi(
-      ILogger<MovieApi> logger, DatabaseContext databaseContext
+      ILogger<MovieApi> logger, MovieRepository movieRepository
     )
     {
       _logger = logger;
-      _databaseContext = databaseContext;
+      _movieRepository = movieRepository;
     }
 
     [FunctionName("GetMovies")]
@@ -33,7 +32,7 @@ namespace AzureFunctionSqlApi.Functions
 
       try
       {
-        var movies = await _databaseContext.Movies.ToListAsync();
+        var movies = await _movieRepository.GetAllMovies();
         returnValue = new OkObjectResult(movies);
       }
       catch (Exception ex)
