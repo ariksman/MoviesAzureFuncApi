@@ -41,8 +41,6 @@ namespace AzureFunctionSqlApi.Functions
       }
       movies.AddRange(movies2);
 
-      var moviesToBeAdded = new List<Movie>();
-
       await _movieRepository.AddOrUpdateMovies(movies);
     }
 
