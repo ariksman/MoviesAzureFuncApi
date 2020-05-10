@@ -18,17 +18,17 @@ namespace AzureFunctionSqlApi.Functions
   public class FinnkinoMovieQueryFunction
   {
     private readonly ILogger _logger;
-    private readonly DatabaseContext _context;
+    private readonly MovieRepository _movieRepository;
 
     public FinnkinoMovieQueryFunction(ILogger<FinnkinoMovieQueryFunction> logger,
-      DatabaseContext context)
+      MovieRepository movieRepository)
     {
       _logger = logger;
-      _context = context;
+      _movieRepository = movieRepository;
     }
 
     [FunctionName("FinnkinoMovieQueryFunction")]
-    public async Task Run([TimerTrigger("0 */90 * * * *")] TimerInfo myTimer, ILogger log)
+    public async Task Run([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer, ILogger log)
     {
       log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
       var response = await FinnkinoApi.GetAllCurrentMovies();
@@ -43,42 +43,7 @@ namespace AzureFunctionSqlApi.Functions
 
       var moviesToBeAdded = new List<Movie>();
 
-      foreach (var movie in movies)
-      {
-        try
-        {
-          var existingMovie = await _context.Movies.FirstOrDefaultAsync(m => m.MovieId == movie.MovieId);
-
-          if (existingMovie == null)
-          {
-            _context.TruncateStringsBasedOnMaxLength(movie, _logger);
-            moviesToBeAdded.Add(movie);
-            continue;
-          }
-
-          existingMovie.Name = movie.Name;
-          existingMovie.Description = movie.Description;
-          existingMovie.DescriptionLong = movie.DescriptionLong;
-          existingMovie.ImageUrl = movie.ImageUrl;
-          existingMovie.HomepageUrl = movie.HomepageUrl;
-          existingMovie.LocalRelease = movie.LocalRelease;
-
-        }
-        catch (Exception ex)
-        {
-          _logger.LogError($"Could not update movies. Exception thrown: {ex.Message}");
-        }
-      }
-
-      try
-      {
-        await _context.Movies.AddRangeAsync(moviesToBeAdded);
-        await _context.SaveChangesAsync();
-      }
-      catch (Exception ex)
-      {
-        _logger.LogError($"Could not add movies. Exception thrown: {ex.Message}");
-      }
+      await _movieRepository.AddOrUpdateMovies(movies);
     }
 
     public static async Task<List<Movie>> ParseXmlToMovies(HttpResponseMessage response)
