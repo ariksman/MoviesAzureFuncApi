@@ -30,7 +30,8 @@ namespace AzureFunctionSqlApi
 
       var connectionString = config.GetConnectionString("AzureSqlConnectionString");
       builder.Services.AddDbContext(connectionString);
-      builder.Services.AddSingleton(sp => new MovieRepository(sp.GetService<DatabaseContext>()));
+      builder.Services.AddSingleton(sp => 
+        new MovieRepository(sp.GetService<DatabaseContext>(), sp.GetService<ILogger<MovieRepository>>() ));
     }
   }
 
