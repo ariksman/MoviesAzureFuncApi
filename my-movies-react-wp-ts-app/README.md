@@ -167,6 +167,9 @@ clsx is a tiny utility for constructing className strings conditionally.
 yarn add clsx
 ```
 
+##
+Source: https://www.sentinelstand.com/article/create-react-app-from-scratch-with-webpack-and-babel
+
 ## ORIGINAL README BELOW
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
