@@ -144,7 +144,7 @@ yarn add @material-ui/core
 ```
 
 ``` Html
-//Any font of your choice
+//Any font
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 ```
@@ -167,8 +167,9 @@ clsx is a tiny utility for constructing className strings conditionally.
 yarn add clsx
 ```
 
-##
-Source: https://www.sentinelstand.com/article/create-react-app-from-scratch-with-webpack-and-babel
+## Source
+
+https://www.sentinelstand.com/article/create-react-app-from-scratch-with-webpack-and-babel
 
 ## ORIGINAL README BELOW
 
