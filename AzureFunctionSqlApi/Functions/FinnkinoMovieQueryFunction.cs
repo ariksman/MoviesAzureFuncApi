@@ -15,7 +15,7 @@ using MoviesApi.Common;
 
 namespace AzureFunctionSqlApi.Functions
 {
-  public class FinnkinoMovieQueryFunction
+public class FinnkinoMovieQueryFunction
   {
     private readonly ILogger _logger;
     private readonly MovieRepository _movieRepository;
@@ -28,7 +28,7 @@ namespace AzureFunctionSqlApi.Functions
     }
 
     [FunctionName("FinnkinoMovieQueryFunction")]
-    public async Task Run([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer, ILogger log)
+    public async Task Run([TimerTrigger("0 */90 * * * *")] TimerInfo myTimer, ILogger log)
     {
       log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
       var response = await FinnkinoApi.GetAllCurrentMovies();

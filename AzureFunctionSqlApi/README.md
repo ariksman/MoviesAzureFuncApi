@@ -22,3 +22,8 @@ To test locally with the Azure Storage emulator, you will need the following `lo
   } 
 }
 ```
+
+## Swagger
+
+[Swagger](https://swagger.io) is an OpenAPI description format for REST APIs and allows you to describe the structure of your APIs so that machines can read them.
+The automatically generated UI from available endpoint functions can be found at the http://localhost:7071/api/swagger/ui
