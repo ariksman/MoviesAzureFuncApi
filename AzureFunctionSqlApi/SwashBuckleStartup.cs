@@ -6,14 +6,14 @@ using Microsoft.Azure.WebJobs.Hosting;
 using Microsoft.Azure.WebJobs;
 
 [assembly: WebJobsStartup(typeof(SwashBuckleStartup))]
+
 namespace AzureFunctionSqlApi
 {
-        internal class SwashBuckleStartup : IWebJobsStartup
-        {
-
-        public void Configure(IWebJobsBuilder builder)
-        {
-            builder.AddSwashBuckle(Assembly.GetExecutingAssembly());
-        }
+  internal class SwashBuckleStartup : IWebJobsStartup
+  {
+    public void Configure(IWebJobsBuilder builder)
+    {
+      builder.AddSwashBuckle(Assembly.GetExecutingAssembly());
     }
+  }
 }
