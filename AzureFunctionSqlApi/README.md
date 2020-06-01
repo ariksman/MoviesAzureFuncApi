@@ -23,6 +23,12 @@ To test locally with the Azure Storage emulator, you will need the following `lo
 }
 ```
 
+## Database
+
+``` Powershell
+dotnet ef database update -p [project with migrations] -s [api project]
+```
+
 ## Swagger
 
 [Swagger](https://swagger.io) is an OpenAPI description format for REST APIs and allows you to describe the structure of your APIs so that machines can read them.
