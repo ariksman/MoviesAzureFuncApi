@@ -27,11 +27,15 @@ To test locally with the Azure Storage emulator, you will need the following `lo
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AzureWebJobs.FinnkinoMovieQueryFunction.Disabled": false,
+    "AzureWebJobs.GetMovies.Disabled": false
   },
-  "Host": {
-    "CORS": "*"
+  "ConnectionStrings": {
+    "AzureSqlConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FinnkinoMovies;Integrated Security=True;"
+  },
+  "AzureSqlSettings": {
+    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FinnkinoMovies;Integrated Security=True;"
   }
 }
 ```
